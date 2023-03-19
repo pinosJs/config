@@ -1,0 +1,16 @@
+{
+  "name": "@pinos/prettier-config",
+  "version": "0.0.0",
+  "description": "prettier-config",
+  "author": "eric<https://github.com/GOGOGOSIR>",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "prettier": ">=2.0.0"
+  }
+}

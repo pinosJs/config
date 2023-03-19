@@ -37,6 +37,8 @@
     "esbuild",
     "execa",
     "iife",
+    "pinos",
+    "tailwindcss"
   ],
   "css.validate": false,
   // 保存修复

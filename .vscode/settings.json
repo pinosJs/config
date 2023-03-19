@@ -37,7 +37,6 @@
     "esbuild",
     "execa",
     "iife",
-    "kfanguse"
   ],
   "css.validate": false,
   // 保存修复

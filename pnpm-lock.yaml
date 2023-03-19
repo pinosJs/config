@@ -6,6 +6,7 @@ importers:
     specifiers:
       '@commitlint/cli': ^17.1.2
       '@commitlint/config-conventional': ^17.1.0
+      '@pinos/eslint-config': workspace:^
       '@types/fs-extra': ^11.0.1
       '@types/minimist': ^1.2.2
       '@types/node': ^18.11.18
@@ -29,6 +30,7 @@ importers:
     devDependencies:
       '@commitlint/cli': 17.4.4
       '@commitlint/config-conventional': 17.4.4
+      '@pinos/eslint-config': link:packages/eslint-config
       '@types/fs-extra': 11.0.1
       '@types/minimist': 1.2.2
       '@types/node': 18.15.3

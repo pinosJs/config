@@ -3,18 +3,22 @@
   "private": true,
   "packageManager": "pnpm@7.1.0",
   "description": "some general configuration of the project",
+  "author": "eric<https://github.com/GOGOGOSIR>",
+  "license": "MIT",
+  "keywords": [
+    "config",
+    "eslint-config",
+    "stylelint-config"
+  ],
   "scripts": {
     "cz": "git-cz",
     "release": "esno scripts/release.ts",
     "ci-publish": "esno scripts/publish-ci.ts"
   },
-  "keywords": [
-    "eslint",
-    "config"
-  ],
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
+    "@pinos/eslint-config": "workspace:^",
     "@types/fs-extra": "^11.0.1",
     "@types/minimist": "^1.2.2",
     "@types/node": "^18.11.18",
@@ -41,8 +45,6 @@
       "path": "node_modules/cz-conventional-changelog"
     }
   },
-  "author": "eric<https://github.com/GOGOGOSIR>",
-  "license": "MIT",
   "lint-staged": {
     "packages/**/*.{js,cjs,mjs,jsx,vue,ts,tsx,cts,mts}": [
       "eslint --fix --max-warnings 0"

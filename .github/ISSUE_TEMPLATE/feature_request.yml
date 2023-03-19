@@ -1,0 +1,30 @@
+name: "\U0001F680 New feature proposal"
+
+description: Propose a new feature to be added to config
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your interest in the project and taking the time to fill out this feature report!
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Description
+      description: "Clear and concise description of the problem. Please make the reason and usecases as detailed as possible. If you intend to submit a PR for this issue, tell us in the description. Thanks!"
+      placeholder: As a developer using config I want [goal / wish] so that [benefit].
+    validations:
+      required: true
+
+  - type: dropdown
+    id: package-name
+    attributes:
+      label: The name of the package
+      description: Please select the name of the package
+      options:
+        - '@pinos/eslint-config'
+        - '@pinos/stylelint-config'
+        - '@pinos/prettier-config'
+    validations:
+      required: true

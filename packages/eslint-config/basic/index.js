@@ -138,7 +138,7 @@ module.exports = {
     'import/no-mutable-exports': 'error', // 禁止使用 var 或 let 使用可变导出
     'import/no-unresolved': 'off', // 确保导入指向可以解析的文件/模块
     'import/no-absolute-path': 'off',
-    'import/exports-last': 'error', // export 文件必须放最后
+    'import/exports-last': 'off', // export 文件必须放最后
     'import/newline-after-import': ['error', { count: 1 }], // 导入文件后必须空两行
 
     // unicorn
@@ -157,7 +157,7 @@ module.exports = {
     ], // 以该文件形式创建文件foo-bar.js
     'unicorn/no-instanceof-array': 'error', // Require Array.isArray() instead of instanceof Array.
     'unicorn/no-invalid-remove-event-listener': 'error', // EventTarget#removeEventListener()防止使用表达式的结果进行调用
-    'unicorn/no-nested-ternary': 'error', // 规范嵌套三元运算符的使用
+    'unicorn/no-nested-ternary': 'off', // 规范嵌套三元运算符的使用
     'unicorn/no-process-exit': 'off', // This rule is an extension to ESLint's no-process-exit rule, that allows process.exit() to be called in files that start with a hashbang → #!/usr/bin/env node. It also allows process.exit() to be called in process.on('<event>', func) event handlers and in files that imports worker_threads
     'unicorn/no-unreadable-array-destructuring': 'error', // 禁止不可读的数组的解构
     'unicorn/no-unreadable-iife': 'error',

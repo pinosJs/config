@@ -1,7 +1,7 @@
 // 参考 vite 源码
+import colors from 'picocolors'
 import prompts from 'prompts'
 import semver from 'semver'
-import colors from 'picocolors'
 import { args, getPackageInfo, getVersionChoices, isDryRun, logRecentCommits, packages, run, runIfNotDry, step, updateVersion } from './release-utils'
 
 async function main(): Promise<void> {
@@ -11,7 +11,7 @@ async function main(): Promise<void> {
     type: 'select',
     name: 'pkg',
     message: 'Select package',
-    choices: packages.map(i => ({ value: i, title: i })),
+    choices: packages.map(i => ({ value: i, title: i }))
   })
 
   if (!pkg)
@@ -27,7 +27,7 @@ async function main(): Promise<void> {
       type: 'select',
       name: 'release',
       message: 'Select release type',
-      choices: getVersionChoices(currentVersion),
+      choices: getVersionChoices(currentVersion)
     })
 
     if (release === 'custom') {
@@ -35,11 +35,10 @@ async function main(): Promise<void> {
         type: 'text',
         name: 'version',
         message: 'Input custom version',
-        initial: currentVersion,
+        initial: currentVersion
       })
       targetVersion = res.version
-    }
-    else {
+    } else {
       targetVersion = release
     }
   }
@@ -58,7 +57,7 @@ async function main(): Promise<void> {
   const { yes }: { yes: boolean } = await prompts({
     type: 'confirm',
     name: 'yes',
-    message: `Releasing ${colors.yellow(tag)} Confirm?`,
+    message: `Releasing ${colors.yellow(tag)} Confirm?`
   })
 
   if (!yes)
@@ -77,7 +76,7 @@ async function main(): Promise<void> {
     'CHANGELOG.md',
     '-s',
     '--commit-path',
-    '.',
+    '.'
   ]
   changelogArgs.push('--lerna-package', pkgName)
   await run('npx', changelogArgs, { cwd: pkgDir })
@@ -89,8 +88,7 @@ async function main(): Promise<void> {
     await runIfNotDry('git', ['add', '-A'])
     await runIfNotDry('git', ['commit', '-m', `release: ${tag}`])
     await runIfNotDry('git', ['tag', tag])
-  }
-  else {
+  } else {
     console.log('No changes to commit.')
   }
 
@@ -100,12 +98,11 @@ async function main(): Promise<void> {
 
   if (isDryRun) {
     console.log('\nDry run finished - run git diff to see package changes.')
-  }
-  else {
+  } else {
     console.log(
       colors.green(
-        '\nPushed, publishing should starts shortly on CI.\nhttps://github.com/pinosJs/config/actions/workflows/publish.yml',
-      ),
+        '\nPushed, publishing should starts shortly on CI.\nhttps://github.com/pinosJs/config/actions/workflows/publish.yml'
+      )
     )
   }
 

@@ -1,13 +1,13 @@
 // 参考 vite 源码
 import { existsSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
-import fs from 'fs-extra'
-import semver from 'semver'
-import type { ReleaseType } from 'semver'
-import minimist from 'minimist'
 import { execa } from 'execa'
+import fs from 'fs-extra'
+import minimist from 'minimist'
 import colors from 'picocolors'
+import semver from 'semver'
 import type { Options as ExecaOptions, ExecaReturnValue } from 'execa'
+import type { ReleaseType } from 'semver'
 
 interface Pkg {
   name: string
@@ -40,7 +40,7 @@ if (isDryRun) {
 export async function run(
   bin: string,
   args: string[],
-  opts: ExecaOptions<string> = {},
+  opts: ExecaOptions<string> = {}
 ): Promise<ExecaReturnValue<string>> {
   return execa(bin, args, { stdio: 'inherit', ...opts })
 }
@@ -48,11 +48,11 @@ export async function run(
 export async function dryRun(
   bin: string,
   args: string[],
-  opts?: ExecaOptions<string>,
+  opts?: ExecaOptions<string>
 ): Promise<void> {
   return console.log(
     colors.blue(`[dryrun] ${bin} ${args.join(' ')}`),
-    opts || '',
+    opts || ''
   )
 }
 
@@ -78,14 +78,14 @@ export async function logRecentCommits(pkgName: string) {
   // 获取tag commit的节点的commitId
   // git rev-list 按时间顺序倒序列出提交对象
   const sha = await run('git', ['rev-list', '-n', '1', tag], {
-    stdio: 'pipe',
+    stdio: 'pipe'
   }).then(res => res.stdout.trim())
   console.log(
     colors.bold(
       `\n${colors.blue('i')} Commits of ${colors.green(
-        pkgName,
-      )} since ${colors.green(tag)} ${colors.gray(`(${sha.slice(0, 5)})`)}`,
-    ),
+        pkgName
+      )} since ${colors.green(tag)} ${colors.gray(`(${sha.slice(0, 5)})`)}`
+    )
   )
 
   // 输出某个包的tag对应的commit节点（不包含该节点）到最新的commit节点记录
@@ -97,9 +97,9 @@ export async function logRecentCommits(pkgName: string) {
       `${sha}..HEAD`,
       '--oneline',
       '--',
-      `packages/${getPkgDirName(pkgName)}`,
+      `packages/${getPkgDirName(pkgName)}`
     ],
-    { stdio: 'inherit' },
+    { stdio: 'inherit' }
   )
 }
 
@@ -128,7 +128,7 @@ export function getPackageInfo(pkgName: string): {
     pkgName,
     pkgDir,
     pkgPath,
-    currentVersion,
+    currentVersion
   }
 }
 
@@ -153,48 +153,46 @@ export function getVersionChoices(currentVersion: string): VersionChoice[] {
   let versionChoices: VersionChoice[] = [
     {
       title: 'next',
-      value: inc(isStable ? 'patch' : 'prerelease'),
-    },
+      value: inc(isStable ? 'patch' : 'prerelease')
+    }
   ]
 
   if (isStable) {
     versionChoices.push(
       {
         title: 'beta-minor',
-        value: inc('preminor'),
+        value: inc('preminor')
       },
       {
         title: 'beta-major',
-        value: inc('premajor'),
+        value: inc('premajor')
       },
       {
         title: 'alpha-minor',
-        value: inc('preminor', 'alpha'),
+        value: inc('preminor', 'alpha')
       },
       {
         title: 'alpha-major',
-        value: inc('premajor', 'alpha'),
+        value: inc('premajor', 'alpha')
       },
       {
         title: 'minor',
-        value: inc('minor'),
+        value: inc('minor')
       },
       {
         title: 'major',
-        value: inc('major'),
-      },
+        value: inc('major')
+      }
     )
-  }
-  else if (currentAlpha) {
+  } else if (currentAlpha) {
     versionChoices.push({
       title: 'beta',
-      value: `${inc('patch')}-beta.0`,
+      value: `${inc('patch')}-beta.0`
     })
-  }
-  else {
+  } else {
     versionChoices.push({
       title: 'stable',
-      value: inc('patch'),
+      value: inc('patch')
     })
   }
   versionChoices.push({ value: 'custom', title: 'custom' })
@@ -228,13 +226,13 @@ export async function getActiveVersion(pkgName: string): Promise<string> {
 
 export async function publishPackage(
   pkdDir: string,
-  tag?: string,
+  tag?: string
 ): Promise<void> {
   const publicArgs = ['publish', '--access', 'public']
   if (tag)
     publicArgs.push('--tag', tag)
 
   await runIfNotDry('npm', publicArgs, {
-    cwd: pkdDir,
+    cwd: pkdDir
   })
 }

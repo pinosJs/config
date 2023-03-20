@@ -4,8 +4,7 @@ import {
   getActiveVersion,
   getPackageInfo,
   publishPackage,
-  run,
-  step,
+  step
 } from './release-utils'
 
 async function main() {
@@ -14,15 +13,14 @@ async function main() {
   if (!tag)
     throw new Error('No tag specified')
 
-
   const version = tag.replace(/@pinos\/.*@/g, '')
-  const versionReg = new RegExp('@'+ version, 'g')
+  const versionReg = new RegExp(`@${version}`, 'g')
   const pkgName = tag.replace(versionReg, '')
 
   const { currentVersion, pkgDir } = getPackageInfo(pkgName)
   if (currentVersion !== version) {
     throw new Error(
-      `Package version from tag "${version}" mismatches with current version "${currentVersion}"`,
+      `Package version from tag "${version}" mismatches with current version "${currentVersion}"`
     )
   }
 
@@ -40,11 +38,11 @@ async function main() {
   step('Publishing package...')
   const releaseTag = version.includes('beta')
     ? 'beta'
-    : version.includes('alpha')
-      ? 'alpha'
-      : activeVersion && semver.lt(currentVersion, activeVersion)
-        ? 'previous'
-        : undefined
+    : (version.includes('alpha')
+        ? 'alpha'
+        : activeVersion && semver.lt(currentVersion, activeVersion)
+          ? 'previous'
+          : undefined)
   await publishPackage(pkgDir, releaseTag)
 }
 

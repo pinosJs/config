@@ -2,6 +2,9 @@ module.exports = {
   // import
   'import/named': 'off',
 
+  // off
+  '@typescript-eslint/no-non-null-assertion': 'off',
+
   // ts
   '@typescript-eslint/adjacent-overload-signatures': 'error', // 将重载的成员分组在一起
   '@typescript-eslint/ban-ts-comment': 'error',

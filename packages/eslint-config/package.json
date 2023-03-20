@@ -1,6 +1,6 @@
 {
   "name": "@pinos/eslint-config",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "eslint-config",
   "author": "eric<https://github.com/GOGOGOSIR>",
   "main": "index.js",

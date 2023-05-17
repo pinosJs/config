@@ -38,7 +38,9 @@
     "execa",
     "iife",
     "pinos",
-    "tailwindcss"
+    "stylelint",
+    "tailwindcss",
+    "wxml"
   ],
   "css.validate": false,
   // 保存修复
@@ -57,12 +59,14 @@
     "jsonc",
     "typescript",
     "typescriptreact",
+    "wxml",
     "yaml",
     "yml"
   ],
   "files.associations": {
     "*.css": "postcss",
-    "*.json": "jsonc"
+    "*.json": "jsonc",
+    "*.wxml": "html"
   },
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,

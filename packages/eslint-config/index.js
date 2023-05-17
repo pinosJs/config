@@ -7,7 +7,8 @@ const extendsList = [
   './react/index.js',
   './json/index.js',
   './yaml/index.js',
-  './markdown/index.js'
+  './markdown/index.js',
+  './wxml/index.js'
 ]
 
 if (Tailwindcss)

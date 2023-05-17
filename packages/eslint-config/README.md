@@ -10,6 +10,7 @@
 - react
 - ts
 - yaml
+- wxml
 
 **eslint >=8.18.0**
 
@@ -19,7 +20,7 @@
 pnpm add eslint @pinos/eslint-config -D
 ```
 
-### 使用
+### Use
 
 - create ```eslintrc.cjs``` file in the project root directory
 - config ```eslintrc.cjs``` file

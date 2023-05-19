@@ -13,7 +13,8 @@
     "tailwindcss/*",
     "ts/*",
     "vue/*",
-    "yaml/*"
+    "yaml/*",
+    "wxml/*"
   ],
   "publishConfig": {
     "access": "public"

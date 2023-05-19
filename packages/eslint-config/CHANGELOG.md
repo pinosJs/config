@@ -1,3 +1,12 @@
+## [1.2.1](https://github.com/pinosJs/config/compare/@pinos/eslint-config@1.2.0...@pinos/eslint-config@1.2.1) (2023-05-19)
+
+
+### Bug Fixes
+
+* **eslint-config:** package.json file add wxml config ([c09e2fc](https://github.com/pinosJs/config/commit/c09e2fcee13302c1a9ed2d38c0f9d0de9753db13))
+
+
+
 # [1.2.0](https://github.com/pinosJs/config/compare/@pinos/eslint-config@1.1.0...@pinos/eslint-config@1.2.0) (2023-05-18)
 
 

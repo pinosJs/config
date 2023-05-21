@@ -12,7 +12,15 @@ const customParser = TS ? {
     }
   },
   rules: require('../ts/rules.js')
-} : {}
+} : {
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true // 支持jsx
+    }
+  }
+}
 
 module.exports = {
   extends: [

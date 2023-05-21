@@ -11,14 +11,16 @@
     "access": "public"
   },
   "peerDependencies": {
-    "stylelint": ">=14.2.0",
     "postcss": ">=8.0.0",
-    "postcss-html": ">=1.0.0"
+    "postcss-html": ">=1.0.0",
+    "stylelint": ">=14.2.0"
   },
   "dependencies": {
+    "stylelint-config-recommended-less": "^1.0.4",
     "stylelint-config-recommended-vue": "^1.4.0",
     "stylelint-config-standard": "^28.0.0",
-    "stylelint-config-standard-scss": "^5.0.0"
+    "stylelint-config-standard-scss": "^5.0.0",
+    "stylelint-less": "^1.0.6"
   },
   "devDependencies": {
     "postcss": "^8.4.16",

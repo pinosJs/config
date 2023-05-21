@@ -2,6 +2,7 @@ module.exports = {
   extends: [
     'stylelint-config-standard',
     'stylelint-config-standard-scss',
+    'stylelint-config-recommended-less',
     'stylelint-config-recommended-vue'
   ],
   rules: {

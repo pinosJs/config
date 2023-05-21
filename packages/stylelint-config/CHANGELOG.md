@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/pinosJs/config/compare/@pinos/stylelint-config@1.0.0...@pinos/stylelint-config@1.1.0) (2023-05-21)
+
+
+### Features
+
+* **stylelint-config:** add less 的校验 ([418eed0](https://github.com/pinosJs/config/commit/418eed0fc20063ce226759b4955888801830ef2d))
+
+
+
 # 1.0.0 (2023-03-19)
 
 

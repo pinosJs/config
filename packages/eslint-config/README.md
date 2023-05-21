@@ -22,8 +22,8 @@ pnpm add eslint @pinos/eslint-config -D
 
 ### Use
 
-- create ```eslintrc.cjs``` file in the project root directory
-- config ```eslintrc.cjs``` file
+- create ```.eslintrc.cjs``` file in the project root directory
+- config ```.eslintrc.cjs``` file
 
 ```js
 module.exports = {

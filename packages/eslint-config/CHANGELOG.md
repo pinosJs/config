@@ -1,3 +1,14 @@
+## [1.2.2](https://github.com/pinosJs/config/compare/@pinos/eslint-config@1.2.1...@pinos/eslint-config@1.2.2) (2023-05-21)
+
+
+### Bug Fixes
+
+* **eslint-config:** vue 文件支持 js 中的 ?? 等语法校验 ([4843fd2](https://github.com/pinosJs/config/commit/4843fd2c0e3e7960be965948cb58cea453c14a11))
+* **eslint-config:** 关闭 unicorn/prefer-add-event-listener 规则 ([96eda8d](https://github.com/pinosJs/config/commit/96eda8d9e9e1f14d2c3d2a86d0ad904824e342c1))
+* **eslint-config:** 在vue文件中未引入ts的情况下无法校验 ([56fffd2](https://github.com/pinosJs/config/commit/56fffd230f9f1230017098b8bab7ca7ab257d73e))
+
+
+
 ## [1.2.1](https://github.com/pinosJs/config/compare/@pinos/eslint-config@1.2.0...@pinos/eslint-config@1.2.1) (2023-05-19)
 
 

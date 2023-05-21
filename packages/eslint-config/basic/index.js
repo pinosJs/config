@@ -172,7 +172,7 @@ module.exports = {
     'unicorn/require-number-to-fixed-digits-argument': 'error',
     'unicorn/text-encoding-identifier-case': 'error', // 规范编码格式
     // unicorn prefer 规范写法
-    'unicorn/prefer-add-event-listener': 'error',
+    'unicorn/prefer-add-event-listener': 'off',
     'unicorn/prefer-array-find': 'error',
     'unicorn/prefer-array-flat': 'error',
     'unicorn/prefer-array-flat-map': 'error',

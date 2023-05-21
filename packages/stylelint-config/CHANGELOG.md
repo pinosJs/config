@@ -1,3 +1,12 @@
+## [1.1.1](https://github.com/pinosJs/config/compare/@pinos/stylelint-config@1.1.0...@pinos/stylelint-config@1.1.1) (2023-05-21)
+
+
+### Bug Fixes
+
+* **stylelint-config:** vue中无法校验scss语法 ([83f67bd](https://github.com/pinosJs/config/commit/83f67bd135742ed669258a846366ad2f40f5f323))
+
+
+
 # [1.1.0](https://github.com/pinosJs/config/compare/@pinos/stylelint-config@1.0.0...@pinos/stylelint-config@1.1.0) (2023-05-21)
 
 

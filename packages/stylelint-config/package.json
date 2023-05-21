@@ -1,6 +1,6 @@
 {
   "name": "@pinos/stylelint-config",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "stylelint-config",
   "author": "eric<https://github.com/GOGOGOSIR>",
   "main": "index.js",

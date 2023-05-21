@@ -1,6 +1,18 @@
+/* eslint-disable multiline-ternary */
 const { isPackageExists } = require('local-pkg')
 
 const TS = isPackageExists('typescript')
+const customParser = TS ? {
+  parserOptions: {
+    parser: '@typescript-eslint/parser',
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true // 支持jsx
+    }
+  },
+  rules: require('../ts/rules.js')
+} : {}
 
 module.exports = {
   extends: [
@@ -11,15 +23,7 @@ module.exports = {
     {
       files: ['*.vue'],
       parser: 'vue-eslint-parser',
-      parserOptions: {
-        parser: '@typescript-eslint/parser',
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-        ecmaFeatures: {
-          jsx: true // 支持jsx
-        }
-      },
-      rules: require('../ts/rules.js')
+      ...customParser
     }
   ],
   rules: {

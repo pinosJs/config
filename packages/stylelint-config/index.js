@@ -3,7 +3,7 @@ module.exports = {
     'stylelint-config-standard',
     'stylelint-config-standard-scss',
     'stylelint-config-recommended-less',
-    'stylelint-config-recommended-vue'
+    'stylelint-config-recommended-vue/scss'
   ],
   rules: {
     // base-config

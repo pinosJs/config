@@ -60,6 +60,14 @@ This is the recommended configuration for vscode
   "[json]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
+  "[less]": {
+    "editor.codeActionsOnSave": [
+      "source.formatDocument",
+      // eslint-disable-next-line jsonc/sort-array-values
+      "source.fixAll.stylelint"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[scss]": {
     "editor.codeActionsOnSave": [
       "source.formatDocument",
@@ -115,6 +123,7 @@ This is the recommended configuration for vscode
   "stylelint.enable": true,
   "stylelint.validate": [
     "css",
+    "less",
     "postcss",
     "scss",
     "vue"
